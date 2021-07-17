@@ -1,6 +1,6 @@
 /// @desc Update movement.
-var xdir = blast ? -1 : keyboard_direction(vk_left, vk_right);
-var ydir = keyboard_direction(vk_up, vk_down);
+var xdir = blast ? -1 : clamp(keyboard_direction(vk_left, vk_right) + keyboard_direction(ord("A"), ord("D")), -1, 1);
+var ydir = clamp(keyboard_direction(vk_up, vk_down) + keyboard_direction(ord("W"), ord("S")), -1, 1);
 xspeed = movement_iterate(xspeed, acc, frict, handling, xdir);
 yspeed = movement_iterate(yspeed, acc, frict, handling, ydir);
 x += xspeed;
@@ -19,7 +19,7 @@ if (y < cam_top || y > cam_bottom) {
     y = clamp(y, cam_top, cam_bottom);
 }
 wanda_spawn_particles(partSys);
-blast = keyboard_check(ord("X"));
+blast = keyboard_check(ord("X")) || keyboard_check(vk_enter);
 if (blastTimer == -1) {
     if (blast) {
         blastTimer = 1;

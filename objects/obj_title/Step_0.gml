@@ -18,7 +18,7 @@ with (obj_wanda_projectile) {
 }
 if (make_selection) {
     if (selection == 0) {
-        visible = false;
+        instance_create_layer(x, y, layer, obj_gameloop);
     } else {
         game_end();
     }

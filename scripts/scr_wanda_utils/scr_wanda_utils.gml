@@ -127,3 +127,39 @@ function wanda_island_spawn_particles(_sys, _left, _top, _right, _bottom) {
     })();
     part_particles_create(_sys, random_range(_left, _right), random_range(_top, _bottom), ty, 1);
 }
+
+/// @desc Draws text in a 3d stylised way.
+/// @param {real} x The x position to draw the text at.
+/// @param {real} y The y position to draw the text at.
+/// @param {real} text The text to draw.
+/// @param {real} amount The amount of 3d layers to apply.
+/// @param {real} outline The outline colour of the text.
+/// @param {real} fill The fill of the text.
+function draw_text_3d(_x, _y, _text, _layer_count, _outline, _fill) {
+    static sep = 1;
+    var angle = 0;
+    var dx = lengthdir_x(sep, angle);
+    var dy = lengthdir_y(sep, angle);
+    for (var i = 0; i < _layer_count; i += 1) {
+        var col = merge_color(_outline, _fill, i / _layer_count)
+        draw_text_color(_x + i * dx, _y + i * dy, _text, col, col, col, col, 1);
+    }
+}
+
+/// @desc Draws text in a stylised way.
+/// @param {real} x The x position to draw the text at.
+/// @param {real} y The y position to draw the text at.
+/// @param {real} text The text to draw.
+function draw_text_wonky(_x, _y, _text) {
+    var angle = 2 * dsin(_y + current_time * 0.05);
+    draw_text_transformed(_x, _y, _text, 1, 1, angle);
+}
+
+#macro VIEW_LEFT camera_get_view_x(VIEW_CAM)
+#macro VIEW_TOP camera_get_view_y(VIEW_CAM)
+#macro VIEW_WIDTH camera_get_view_width(VIEW_CAM)
+#macro VIEW_HEIGHT camera_get_view_height(VIEW_CAM)
+#macro VIEW_RIGHT (VIEW_LEFT + VIEW_WIDTH)
+#macro VIEW_BOTTOM (VIEW_TOP + VIEW_HEIGHT)
+#macro VIEW_CENTRE_X (VIEW_LEFT + VIEW_WIDTH / 2)
+#macro VIEW_CENTRE_Y (VIEW_TOP + VIEW_HEIGHT / 2)

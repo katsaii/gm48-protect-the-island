@@ -23,7 +23,7 @@ blast = keyboard_check(ord("X")) || keyboard_check(vk_enter);
 if (blastTimer == -1) {
     if (blast) {
         blastTimer = 1;
-        with (instance_create_layer(x, y - 10 + random_range(-5, 5), layer, obj_wanda_projectile)) {
+        with (instance_create_depth(x, y - 10 + random_range(-5, 5), depth, obj_wanda_projectile)) {
             image_blend = CCyan.SURGE;
             speed = 10;
             direction = 2 * (other.xspeed + other.yspeed) + random_range(-2, 2);

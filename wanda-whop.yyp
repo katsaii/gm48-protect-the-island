@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"fnt_script","path":"fonts/fnt_script/fnt_script.yy",},"order":0,},
     {"id":{"name":"shd_posterise","path":"shaders/shd_posterise/shd_posterise.yy",},"order":10,},
     {"id":{"name":"spr_sealine","path":"sprites/spr_sealine/spr_sealine.yy",},"order":4,},
     {"id":{"name":"scr_wanda_utils","path":"scripts/scr_wanda_utils/scr_wanda_utils.yy",},"order":3,},
@@ -77,6 +78,7 @@
     {"folderPath":"folders/Wanda/Player.yy","order":0,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Wanda/Common.yy","order":1,"resourceVersion":"1.0","name":"Common","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Wanda/Background.yy","order":2,"resourceVersion":"1.0","name":"Background","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Wanda/Common/Fonts.yy","order":1,"resourceVersion":"1.0","name":"Fonts","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

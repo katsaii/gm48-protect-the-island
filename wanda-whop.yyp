@@ -1,8 +1,10 @@
 {
   "resources": [
     {"id":{"name":"shd_posterise","path":"shaders/shd_posterise/shd_posterise.yy",},"order":10,},
-    {"id":{"name":"scr_draw_utils","path":"scripts/scr_draw_utils/scr_draw_utils.yy",},"order":1,},
+    {"id":{"name":"spr_sealine","path":"sprites/spr_sealine/spr_sealine.yy",},"order":4,},
+    {"id":{"name":"scr_wanda_utils","path":"scripts/scr_wanda_utils/scr_wanda_utils.yy",},"order":1,},
     {"id":{"name":"scr_ui","path":"scripts/scr_ui/scr_ui.yy",},"order":12,},
+    {"id":{"name":"spr_skyline","path":"sprites/spr_skyline/spr_skyline.yy",},"order":1,},
     {"id":{"name":"shd_brightness","path":"shaders/shd_brightness/shd_brightness.yy",},"order":8,},
     {"id":{"name":"scr_controllers","path":"scripts/scr_controllers/scr_controllers.yy",},"order":7,},
     {"id":{"name":"scr_state_machine","path":"scripts/scr_state_machine/scr_state_machine.yy",},"order":4,},
@@ -21,6 +23,7 @@
     {"id":{"name":"shd_clipping","path":"shaders/shd_clipping/shd_clipping.yy",},"order":0,},
     {"id":{"name":"scr_gui","path":"scripts/scr_gui/scr_gui.yy",},"order":8,},
     {"id":{"name":"scr_application","path":"scripts/scr_application/scr_application.yy",},"order":2,},
+    {"id":{"name":"obj_skyline","path":"objects/obj_skyline/obj_skyline.yy",},"order":0,},
     {"id":{"name":"shd_greyscale","path":"shaders/shd_greyscale/shd_greyscale.yy",},"order":4,},
     {"id":{"name":"shd_saturate","path":"shaders/shd_saturate/shd_saturate.yy",},"order":7,},
     {"id":{"name":"fnt_bold","path":"fonts/fnt_bold/fnt_bold.yy",},"order":1,},
@@ -28,7 +31,7 @@
     {"id":{"name":"shd_invert","path":"shaders/shd_invert/shd_invert.yy",},"order":6,},
     {"id":{"name":"the_ui","path":"objects/the_ui/the_ui.yy",},"order":3,},
     {"id":{"name":"shd_hue_shift","path":"shaders/shd_hue_shift/shd_hue_shift.yy",},"order":9,},
-    {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},"order":0,},
+    {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},"order":0,},
   ],
   "Options": [
     {"name":"Amazon Fire","path":"options/amazonfire/options_amazonfire.yy",},
@@ -55,7 +58,7 @@
     ],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
+    {"roomId":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Wanda/Common/Rooms.yy","order":0,"resourceVersion":"1.0","name":"Rooms","tags":[],"resourceType":"GMFolder",},
@@ -65,8 +68,9 @@
     {"folderPath":"folders/Extensions/Shader Effects.yy","order":1,"resourceVersion":"1.0","name":"Shader Effects","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Kandel/Common.yy","order":1,"resourceVersion":"1.0","name":"Common","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Wanda.yy","order":2,"resourceVersion":"1.0","name":"Wanda","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Wanda/Player.yy","order":1,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Wanda/Common.yy","order":2,"resourceVersion":"1.0","name":"Common","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Wanda/Player.yy","order":0,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Wanda/Common.yy","order":1,"resourceVersion":"1.0","name":"Common","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Wanda/Background.yy","order":3,"resourceVersion":"1.0","name":"Background","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

@@ -18,4 +18,16 @@ if (y < cam_top || y > cam_bottom) {
     yspeed = 0;
     y = clamp(y, cam_top, cam_bottom);
 }
-wanda_spawn_particles();
+wanda_spawn_particles(partSys);
+blast = keyboard_check(ord("X"));
+if (blastTimer == -1) {
+    if (blast) {
+        blastTimer = 1;
+        //spawn
+    }
+} else {
+    blastTimer -= blastCountdown;
+    if (blastTimer < 0) {
+        blastTimer = -1;
+    }
+}

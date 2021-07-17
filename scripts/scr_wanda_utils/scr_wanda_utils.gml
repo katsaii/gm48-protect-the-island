@@ -47,8 +47,8 @@ function movement_iterate(_prev_x, _acc, _frict, _handling, _dir) {
 }
 
 /// @desc Spawns a particle at the current position.
-function wanda_spawn_particles() {
-    static sys = part_system_create_layer("Particles", true);
+/// @param {real} sys The ID of the particle system to use.
+function wanda_spawn_particles(_sys) {
     static ty = (function() {
         var _ = part_type_create();
         part_type_shape(_, pt_shape_disk);
@@ -61,5 +61,50 @@ function wanda_spawn_particles() {
         part_type_gravity(_, 0.1, 180);
         return _;
     })();
-    part_particles_create(sys, x, y, ty, 1);
+    part_particles_create(_sys, x, y, ty, 1);
+}
+
+#macro SKYLINE_TOP make_colour_rgb(221, 166, 172) // make_colour_rgb(105, 70, 77);
+#macro SKYLINE_BOTTOM make_colour_rgb(133, 141, 177) // make_colour_rgb(221, 166, 172);
+
+/// @desc Spawns a skyline particle at the current position.
+/// @param {real} sys The ID of the particle system to use.
+/// @param {real} x1 The left position of the region to spawn particles in.
+/// @param {real} y1 The top position of the region to spawn particles in.
+/// @param {real} x2 The right position of the region to spawn particles in.
+/// @param {real} y2 The bottom position of the region to spawn particles in.
+function wanda_sealine_spawn_particles(_sys, _left, _top, _right, _bottom) {
+    static ty = (function() {
+        var _ = part_type_create();
+        part_type_sprite(_, spr_wave, false, false, true);
+        part_type_life(_, 60, 60 * 4);
+        part_type_direction(_, 180, 180, 0, 0);
+        part_type_speed(_, 0.1, 0.2, 0, 0.00);
+        part_type_scale(_, 1, 0.1);
+        part_type_alpha3(_, 0, 1, 0);
+        //part_type_colour1(_, SKYLINE_TOP);
+        part_type_blend(_, true);
+        return _;
+    })();
+    part_particles_create(_sys, random_range(_left, _right), random_range(_top, _bottom), ty, 1);
+}
+
+/// @desc Spawns a skyline cloud at the current position.
+/// @param {real} sys The ID of the particle system to use.
+/// @param {real} x1 The left position of the region to spawn particles in.
+/// @param {real} y1 The top position of the region to spawn particles in.
+/// @param {real} x2 The right position of the region to spawn particles in.
+/// @param {real} y2 The bottom position of the region to spawn particles in.
+function wanda_skyline_spawn_particles(_sys, _left, _top, _right, _bottom) {
+    static ty = (function() {
+        var _ = part_type_create();
+        part_type_sprite(_, spr_cloud, false, false, true);
+        part_type_life(_, 60 * 6, 60 * 8);
+        part_type_direction(_, 180, 180, 0, 0);
+        part_type_speed(_, 0.2, 0.6, 0, 0.00);
+        part_type_alpha3(_, 0, 0.5, 0);
+        //part_type_blend(_, true);
+        return _;
+    })();
+    part_particles_create(_sys, random_range(_left, _right), random_range(_top, _bottom), ty, 1);
 }

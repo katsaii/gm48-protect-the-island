@@ -102,8 +102,27 @@ function wanda_skyline_spawn_particles(_sys, _left, _top, _right, _bottom) {
         part_type_life(_, 60 * 6, 60 * 8);
         part_type_direction(_, 180, 180, 0, 0);
         part_type_speed(_, 0.2, 0.6, 0, 0.00);
-        part_type_alpha3(_, 0, 0.5, 0);
-        //part_type_blend(_, true);
+        part_type_alpha3(_, 0, 0.3, 0);
+        part_type_blend(_, true);
+        return _;
+    })();
+    part_particles_create(_sys, random_range(_left, _right), random_range(_top, _bottom), ty, 1);
+}
+
+/// @desc Spawns a skyline island.
+/// @param {real} sys The ID of the particle system to use.
+/// @param {real} x1 The left position of the region to spawn particles in.
+/// @param {real} y1 The top position of the region to spawn particles in.
+/// @param {real} x2 The right position of the region to spawn particles in.
+/// @param {real} y2 The bottom position of the region to spawn particles in.
+function wanda_island_spawn_particles(_sys, _left, _top, _right, _bottom) {
+    static ty = (function() {
+        var _ = part_type_create();
+        var life = 60 * 20;
+        part_type_sprite(_, spr_island_floating, false, false, true);
+        part_type_life(_, life, life);
+        part_type_direction(_, 180, 180, 0, 0);
+        part_type_speed(_, 0.4, 0.9, 0, 0.00);
         return _;
     })();
     part_particles_create(_sys, random_range(_left, _right), random_range(_top, _bottom), ty, 1);

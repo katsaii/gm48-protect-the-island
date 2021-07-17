@@ -15,6 +15,7 @@
   "layers": [
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_wanda","path":"objects/obj_wanda/obj_wanda.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":144.0,"y":112.0,"resourceVersion":"1.0","name":"inst_7C1EAB5F","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"obj_title","path":"objects/obj_title/obj_title.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":176.0,"y":112.0,"resourceVersion":"1.0","name":"inst_62ABA162","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_skyline","path":"objects/obj_skyline/obj_skyline.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":112.0,"y":96.0,"resourceVersion":"1.0","name":"inst_B07727B","tags":[],"resourceType":"GMRInstance",},
@@ -26,6 +27,7 @@
   "instanceCreationOrder": [
     {"name":"inst_7C1EAB5F","path":"rooms/rm_game/rm_game.yy",},
     {"name":"inst_B07727B","path":"rooms/rm_game/rm_game.yy",},
+    {"name":"inst_62ABA162","path":"rooms/rm_game/rm_game.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -49,8 +51,8 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "Rooms",
-    "path": "folders/Wanda/Common/Rooms.yy",
+    "name": "Wanda",
+    "path": "folders/Wanda.yy",
   },
   "resourceVersion": "1.0",
   "name": "rm_game",

@@ -55,5 +55,5 @@ if (global.hp < 0) {
     gameOver = true;
     audio_play_sound_on(gameOverEmitter, bgm_finish_bad, true, 100);
 } else {
-    audio_emitter_gain(crumbleEmitter, (10 - global.hp) / 10);
+    audio_emitter_gain(crumbleEmitter, (10 - global.hp) / 5);
 }

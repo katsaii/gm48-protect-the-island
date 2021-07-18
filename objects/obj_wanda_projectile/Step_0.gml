@@ -9,8 +9,11 @@ if (x > cam_right) {
     destroy = true;
 } else if (x < cam_left || y < cam_top || y > cam_bottom) {
     if not (immunityToBeingDestroyed) {
-        instance_destroy();
+        destroy = true;
     }
 } else {
     immunityToBeingDestroyed = false;
+}
+if (destroy) {
+    instance_destroy();
 }

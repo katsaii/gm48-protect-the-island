@@ -7,6 +7,7 @@ global.score = 0;
 ini_close();
 selection = 0;
 selectionSubmit = false;
+selectionEmitter = audio_emitter_create();
 musicEmitter = audio_emitter_create();
 musicFade = 0;
 musicFadeCounter = 0.005;

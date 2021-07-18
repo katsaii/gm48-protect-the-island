@@ -5,5 +5,5 @@ part_system_automatic_draw(partSys, false);
 part_system_automatic_draw(partSysCloud, false);
 cloudTimer = 1;
 cloudCountdown = 0.01;
-islandTimer = 0.5;
+islandTimer = random_range(0.2, 0.8);
 islandCountdown = 0.0001;

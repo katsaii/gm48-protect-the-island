@@ -17,3 +17,18 @@ draw_set_alpha(0.9);
 draw_circle_colour(xpos, ypos, global.hp + 0.5 * dsin(angle), CBlue.DEEP_SKY, CYellow.REKINDLED, false);
 draw_circle_colour(xpos, ypos, global.hp + 2 + 0.5 * dsin(angle), CBlue.DEEP_SKY, CYellow.REKINDLED, true);
 draw_set_alpha(1);
+// draw the gui
+draw_set_font(fnt_tiny);
+draw_set_color(COLOUR_BLEND);
+draw_set_valign(fa_top);
+draw_set_halign(fa_center);
+var linear = min(fadeOut * max(gameRestartTimer, 0), 1);
+var interp = easein(linear);
+draw_set_alpha(max(gameRestartTimer, 0));
+draw_text_wonky(VIEW_CENTRE_X, lerp(VIEW_TOP + 10, VIEW_CENTRE_Y - 10, interp), "Score: " + string(global.score) + " (High: " + string(global.highscore) + ")");
+draw_set_alpha(1.0);
+if (interp > 0) {
+    draw_set_font(fnt_script);
+    draw_text_3d(lerp(VIEW_LEFT - 200, VIEW_CENTRE_X - 60, interp), VIEW_CENTRE_Y + 40, "Game", 10, COLOUR_BLEND, c_white);
+    draw_text_3d(lerp(VIEW_RIGHT + 200, VIEW_CENTRE_X + 60, interp), VIEW_CENTRE_Y + 40, "Over", 10, COLOUR_BLEND, c_white);
+}

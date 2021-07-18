@@ -4,8 +4,7 @@ if (gameOver) {
     global.hp = 0;
     if (gameRestart) {
         gameRestartTimer -= gameRestartCounter;
-        if (gameRestartTimer < 0) {
-            gameRestartTimer = 0;
+        if (gameRestartTimer < -0.25) {
             instance_destroy();
         }
     } else {
@@ -21,7 +20,7 @@ if (gameOver) {
             }
         }
     }
-    audio_emitter_gain(gameOverEmitter, fadeOut * gameRestartTimer);
+    audio_emitter_gain(gameOverEmitter, fadeOut * max(gameRestartTimer, 0));
     musicFade -= musicFadeCounter * 3;
     if (musicFade < 0) {
         musicFade = 0;

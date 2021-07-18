@@ -27,6 +27,7 @@
     {"id":{"name":"scr_shader_effects","path":"scripts/scr_shader_effects/scr_shader_effects.yy",},"order":1,},
     {"id":{"name":"spr_wanda_broom","path":"sprites/spr_wanda_broom/spr_wanda_broom.yy",},"order":1,},
     {"id":{"name":"shd_dither","path":"shaders/shd_dither/shd_dither.yy",},"order":3,},
+    {"id":{"name":"snd_hit","path":"sounds/snd_hit/snd_hit.yy",},"order":7,},
     {"id":{"name":"the_display","path":"objects/the_display/the_display.yy",},"order":4,},
     {"id":{"name":"fnt_default","path":"fonts/fnt_default/fnt_default.yy",},"order":0,},
     {"id":{"name":"shd_sepia","path":"shaders/shd_sepia/shd_sepia.yy",},"order":5,},
@@ -34,6 +35,7 @@
     {"id":{"name":"snd_wanda_shoot","path":"sounds/snd_wanda_shoot/snd_wanda_shoot.yy",},"order":6,},
     {"id":{"name":"ac_easein","path":"animcurves/ac_easein/ac_easein.yy",},"order":2,},
     {"id":{"name":"scr_gui","path":"scripts/scr_gui/scr_gui.yy",},"order":8,},
+    {"id":{"name":"snd_enemy_shoot","path":"sounds/snd_enemy_shoot/snd_enemy_shoot.yy",},"order":0,},
     {"id":{"name":"scr_application","path":"scripts/scr_application/scr_application.yy",},"order":2,},
     {"id":{"name":"spr_wave","path":"sprites/spr_wave/spr_wave.yy",},"order":5,},
     {"id":{"name":"obj_wanda_projectile","path":"objects/obj_wanda_projectile/obj_wanda_projectile.yy",},"order":3,},
@@ -93,6 +95,7 @@
     {"folderPath":"folders/Wanda/Background.yy","order":2,"resourceVersion":"1.0","name":"Background","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Wanda/Title.yy","order":4,"resourceVersion":"1.0","name":"Title","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Wanda/Gameloop.yy","order":7,"resourceVersion":"1.0","name":"Gameloop","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Wanda/Enemies.yy","order":8,"resourceVersion":"1.0","name":"Enemies","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

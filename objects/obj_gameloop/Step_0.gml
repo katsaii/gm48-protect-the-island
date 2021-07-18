@@ -2,15 +2,27 @@
 audio_emitter_gain(musicEmitter, musicFade);
 if (gameOver) {
     global.hp = 0;
-    if (fadeOut >= 1) {
-        fadeOut = 1;
-        if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("X"))) {
+    if (gameRestart) {
+        gameRestartTimer -= gameRestartCounter;
+        if (gameRestartTimer < 0) {
+            gameRestartTimer = 0;
             instance_destroy();
         }
     } else {
-        fadeOut += fadeOutCounter;
+        if (fadeOut >= 1) {
+            fadeOut = 1;
+            if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("X"))) {
+                gameRestart = true;
+            }
+        } else {
+            fadeOut += fadeOutCounter;
+            if (fadeOut >= 1) {
+                fadeOut = 1;
+            }
+        }
     }
-    musicFade -= musicFadeCounter * 2;
+    audio_emitter_gain(gameOverEmitter, fadeOut * gameRestartTimer);
+    musicFade -= musicFadeCounter * 3;
     if (musicFade < 0) {
         musicFade = 0;
     }
@@ -35,4 +47,5 @@ global.hp -= hpDrain;
 if (global.hp < 0) {
     global.hp = 0;
     gameOver = true;
+    audio_play_sound_on(gameOverEmitter, bgm_finish_bad, true, 100);
 }

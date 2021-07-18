@@ -21,6 +21,7 @@ if (gameOver) {
         }
     }
     audio_emitter_gain(gameOverEmitter, fadeOut * max(gameRestartTimer, 0));
+    audio_emitter_gain(crumbleEmitter, 1 - fadeOut);
     musicFade -= musicFadeCounter * 3;
     if (musicFade < 0) {
         musicFade = 0;
@@ -53,4 +54,6 @@ if (global.hp < 0) {
     global.hp = 0;
     gameOver = true;
     audio_play_sound_on(gameOverEmitter, bgm_finish_bad, true, 100);
+} else {
+    audio_emitter_gain(crumbleEmitter, (10 - global.hp) / 10);
 }

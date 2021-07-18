@@ -32,3 +32,10 @@ if (interp > 0) {
     draw_text_3d(lerp(VIEW_LEFT - 200, VIEW_CENTRE_X - 60, interp), VIEW_CENTRE_Y + 40, "Game", 10, COLOUR_BLEND, c_white);
     draw_text_3d(lerp(VIEW_RIGHT + 200, VIEW_CENTRE_X + 60, interp), VIEW_CENTRE_Y + 40, "Over", 10, COLOUR_BLEND, c_white);
 }
+if (fadeIn > 0.01 && fadeIn < 0.99) {
+    draw_text_3d(
+            lerp(VIEW_RIGHT + 200, VIEW_LEFT - 200, midslow(fadeIn)),
+            VIEW_BOTTOM - 50,
+            "Protect the Island",
+            5, COLOUR_BLEND, CYellow.REKINDLED);
+}

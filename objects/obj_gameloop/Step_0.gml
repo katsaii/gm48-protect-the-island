@@ -57,3 +57,7 @@ if (global.hp < 0) {
 } else {
     audio_emitter_gain(crumbleEmitter, (10 - global.hp) / 5);
 }
+if not (instance_exists(obj_enemy)) {
+    show_debug_message("starting a new wave");
+    instance_create_layer(VIEW_RIGHT - 80, VIEW_CENTRE_Y, layer, obj_enemy);
+}

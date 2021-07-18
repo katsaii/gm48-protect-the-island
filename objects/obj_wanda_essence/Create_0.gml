@@ -1,5 +1,6 @@
 /// @desc Initialise essence.
 global.hpPool -= 0.5;
+global.score -= 3;
 targetX = VIEW_CENTRE_X;
 targetY = VIEW_CENTRE_Y;
 var angle = random_range(0, 360);

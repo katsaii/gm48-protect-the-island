@@ -179,7 +179,14 @@ function draw_text_wonky(_x, _y, _text) {
 /// @desc Applies ease-in interpolation.
 /// @param {real} amount The amount to interpolate.
 function easein(_interp) {
-    static chan = animcurve_get_channel(ac_easein, 0);
+    static chan = animcurve_get_channel(ac_ease, 0);
+    return animcurve_channel_evaluate(chan, _interp);
+}
+
+/// @desc Applies mid-slow interpolation.
+/// @param {real} amount The amount to interpolate.
+function midslow(_interp) {
+    static chan = animcurve_get_channel(ac_ease, 1);
     return animcurve_channel_evaluate(chan, _interp);
 }
 

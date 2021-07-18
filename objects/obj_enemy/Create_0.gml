@@ -1,13 +1,13 @@
 /// @desc Initialise this enemy.
 witch = choose(spr_enemy_test);
-hp = 5;
+hp = choose(3, 5, 7);
 blast = false;
 xspeed = 0;
 yspeed = 0;
 targetX = xstart;
 targetY = ystart;
-amplitudeX = 10;
-amplitudeY = 100;
+amplitudeX = 0;
+amplitudeY = 0;
 entryTimer = 0;
 entryCounter = 0.01;
 hitTimer = 0;

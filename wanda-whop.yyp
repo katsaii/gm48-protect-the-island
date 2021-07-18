@@ -36,7 +36,7 @@
     {"id":{"name":"shd_clipping","path":"shaders/shd_clipping/shd_clipping.yy",},"order":0,},
     {"id":{"name":"snd_wanda_shoot","path":"sounds/snd_wanda_shoot/snd_wanda_shoot.yy",},"order":6,},
     {"id":{"name":"spr_heart","path":"sprites/spr_heart/spr_heart.yy",},"order":3,},
-    {"id":{"name":"ac_easein","path":"animcurves/ac_easein/ac_easein.yy",},"order":2,},
+    {"id":{"name":"ac_ease","path":"animcurves/ac_ease/ac_ease.yy",},"order":2,},
     {"id":{"name":"scr_gui","path":"scripts/scr_gui/scr_gui.yy",},"order":8,},
     {"id":{"name":"snd_enemy_shoot","path":"sounds/snd_enemy_shoot/snd_enemy_shoot.yy",},"order":0,},
     {"id":{"name":"scr_application","path":"scripts/scr_application/scr_application.yy",},"order":2,},

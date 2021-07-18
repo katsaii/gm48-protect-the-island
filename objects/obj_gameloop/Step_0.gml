@@ -57,19 +57,28 @@ if (global.hp < 0) {
 } else {
     audio_emitter_gain(crumbleEmitter, (10 - global.hp) / 5);
 }
-if not (instance_exists(obj_enemy)) {
+if (fadeIn > 0.9 && !instance_exists(obj_enemy)) {
     show_debug_message("starting a new wave");
     // 3 types of wave:
     // - single centre enemy
     // - two enemties going in circles
     // - three enemies in a triangle formation, the middle enemy in front
     switch (choose(0, 1, 3)) {
-        default:
     case 0:
         with (instance_create_layer(VIEW_RIGHT - 50, VIEW_CENTRE_Y, layer, obj_enemy)) {
             amplitudeX = 10;
             amplitudeY = VIEW_HEIGHT / 2.5;
         }
         break;
+    case 1:
+        var amp = VIEW_HEIGHT / 5.5;
+        with (instance_create_layer(VIEW_RIGHT - 60, VIEW_CENTRE_Y - amp, layer, obj_enemy)) {
+            amplitudeX = amp;
+            amplitudeY = amp;
+        }
+        with (instance_create_layer(VIEW_RIGHT - 60, VIEW_CENTRE_Y + amp, layer, obj_enemy)) {
+            amplitudeX = amp;
+            amplitudeY = amp;
+        }
     }
 }

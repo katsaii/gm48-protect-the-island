@@ -1,4 +1,5 @@
 /// @desc Initialise the gameloop.
+gml_pragma("global", @'global.hp = 0; global.hpPool = 0;');
 obj_title.visible = false;
 hpMax = 20;
 global.hp = hpMax;

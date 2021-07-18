@@ -40,6 +40,21 @@ if (blastTimer == -1) {
         blastTimer = -1;
     }
 }
+hitTimer -= hitCounter;
+if (hitTimer < 0) {
+    hitTimer = 0;
+}
+if (hitTimer <= 0) {
+    //var proj = instance_place(x, y, obj_enemy_projectile);
+    //if (proj) {
+    if (keyboard_check_pressed(vk_space)) {
+        //instance_destroy(proj);
+        hitTimer = 1;
+        instance_create_layer(x, y, layer, obj_wanda_essence);
+        audio_emitter_pitch(hurtEmitter, 1.5);
+        audio_play_sound_on(hurtEmitter, snd_hit, false, 1);
+    }
+}
 var velocity = map_range(point_distance(0, 0, xspeed, yspeed), 0, 20, 0, 1);
 audio_emitter_gain(flyEmitter, lerp(0.1, 1, velocity));
 audio_emitter_pitch(flyEmitter, lerp(0.75, 1.4, velocity));

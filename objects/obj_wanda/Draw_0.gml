@@ -6,4 +6,8 @@ part_system_drawit(partSys);
 if (blast) {
     img = 3;
 }
+if (hitTimer > 0 && current_time % 150 > 100) {
+    gpu_set_blendmode(bm_add);
+}
 draw_witch(spr_wanda, img, spr_wanda_broom, 0, xpos, ypos, 1, 1, c_white, 1, xspeed, yspeed);
+gpu_set_blendmode(bm_normal);

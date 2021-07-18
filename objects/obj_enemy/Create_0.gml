@@ -1,5 +1,5 @@
 /// @desc Initialise this enemy.
-witch = choose(spr_enemy_test);
+witch = asset_get_index("spr_enemy_" + choose("a", "b"));
 hp = choose(3, 5, 7);
 blast = false;
 xspeed = 0;

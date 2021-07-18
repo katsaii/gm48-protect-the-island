@@ -151,7 +151,7 @@ function draw_text_3d(_x, _y, _text, _layer_count, _outline, _fill) {
 /// @param {real} y The y position to draw the text at.
 /// @param {real} text The text to draw.
 function draw_text_wonky(_x, _y, _text) {
-    var angle = 2 * dsin(_y + current_time * 0.05);
+    var angle = 2 * dsin(-_y * 3 + current_time * 0.05);
     draw_text_transformed(_x, _y, _text, 1, 1, angle);
 }
 

@@ -9,6 +9,12 @@ var cam_right = cam_left + camera_get_view_width(cam);
 var cam_bottom = cam_top + camera_get_view_height(cam);
 var cam_xcentre = mean(cam_left, cam_right);
 selection = obj_wanda.y > lerp(cam_top, cam_bottom, optionThreshold);
+if (selection == 0 && obj_wanda.y < lerp(cam_top, cam_bottom, creditThreshold)) {
+    selection = 2 + (obj_wanda.x > mean(cam_left, cam_right));
+}
+if (!selectionSubmit && (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("X")))) {
+    selectionSubmit = true;
+}
 var make_selection = false;
 with (obj_wanda_projectile) {
     if (x > cam_xcentre) {
@@ -16,10 +22,20 @@ with (obj_wanda_projectile) {
         break;
     }
 }
-if (make_selection) {
-    if (selection == 0) {
+if (selectionSubmit && make_selection) {
+    selectionSubmit = false;
+    switch (selection) {
+    case 0:
         instance_create_layer(x, y, layer, obj_gameloop);
-    } else {
+        break;
+    case 1:
         game_end();
+        break;
+    case 2:
+        url_open("http://nuxiigit.github.io/");
+        break;
+    case 3:
+        url_open("https://www.deviantart.com/mashmerlow");
+        break;
     }
 }

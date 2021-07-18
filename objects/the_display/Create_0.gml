@@ -12,5 +12,5 @@ windowWidth = -1;
 windowHeight = -1;
 viewWidth = -1;
 viewHeight = -1;
-pixelPerfect = true;
+pixelPerfect = false;
 draw_set_font(fnt_default);

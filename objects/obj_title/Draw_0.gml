@@ -24,6 +24,9 @@ draw_text_3d(cam_xcentre, cam_top + 80, "Witch Wanda", 12, make_color_rgb(86, 36
 draw_set_font(fnt_tiny);
 draw_set_colour(primary);
 draw_text_wonky(cam_xcentre, cam_bottom - 20, "High Score: " + string(global.highscore));
+draw_set_font(fnt_default);
+draw_text_wonky(cam_left + 60, cam_bottom - 50, "Move\nWASD or Arrows");
+draw_text_wonky(cam_right - 60, cam_bottom - 50, "Shoot\nEnter or X");
 draw_set_font(fnt_complementary);
 var option = lerp(cam_top, cam_bottom, optionThreshold);
 draw_set_colour(selection == 0 ? secondary : primary);

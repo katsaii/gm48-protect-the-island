@@ -1,9 +1,9 @@
 /// @desc Update movement.
 var xdir = clamp(keyboard_direction(vk_left, vk_right) + keyboard_direction(ord("A"), ord("D")), -1, 1);
 var ydir = clamp(keyboard_direction(vk_up, vk_down) + keyboard_direction(ord("W"), ord("S")), -1, 1);
-xspeed = movement_iterate(xspeed, acc, frict, handling, xdir) - blast * 0.25;
+xspeed = movement_iterate(xspeed, acc, frict, handling, xdir);
 yspeed = movement_iterate(yspeed, acc, frict, handling, ydir);
-x += xspeed;
+x += xspeed - blast;
 y += yspeed;
 var cam = VIEW_CAM;
 var cam_left = camera_get_view_x(cam);

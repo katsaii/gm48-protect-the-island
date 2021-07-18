@@ -9,5 +9,5 @@ if (blast) {
 if (hitTimer > 0 && current_time % 150 > 100) {
     gpu_set_blendmode(bm_add);
 }
-draw_witch(spr_wanda, img, spr_wanda_broom, 0, xpos, ypos, 1, 1, c_white, 1, xspeed, yspeed);
+draw_witch(spr_wanda, img, spr_wanda_broom, 0, xpos, ypos, 1, 1, c_white, 1, xspeed - blast, yspeed);
 gpu_set_blendmode(bm_normal);

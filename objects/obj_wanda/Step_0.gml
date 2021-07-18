@@ -13,10 +13,14 @@ var cam_bottom = cam_top + camera_get_view_height(cam);
 if (x < cam_left || x > cam_right) {
     xspeed = x < cam_left ? 5 : -5;
     x = clamp(x, cam_left, cam_right);
+    audio_emitter_gain(hurtEmitter, 2);
+    audio_play_sound_on(hurtEmitter, snd_pop, false, 1);
 }
 if (y < cam_top || y > cam_bottom) {
     yspeed = y < cam_top ? 5 : -5;
     y = clamp(y, cam_top, cam_bottom);
+    audio_emitter_gain(hurtEmitter, 2);
+    audio_play_sound_on(hurtEmitter, snd_pop, false, 1);
 }
 wanda_spawn_particles(partSys);
 blast = keyboard_check(ord("X")) || keyboard_check(vk_enter);

@@ -11,3 +11,4 @@ x = lerp(VIEW_RIGHT + 50, path_x, interp);
 y = lerp(targetY, path_y, interp);
 xspeed = x - xprevious;
 yspeed = y - yprevious;
+wanda_enemy_spawn_particles(partSys);

@@ -27,7 +27,6 @@ if (blastTimer == -1) {
         audio_emitter_pitch(shootEmitter, random_range(0.8, 1.2));
         audio_play_sound_on(shootEmitter, snd_wanda_shoot, false, 1);
         with (instance_create_depth(x, y - 10 + random_range(-5, 5), depth, obj_wanda_projectile)) {
-            image_blend = CCyan.SURGE;
             speed = 10;
             direction = 2 * (other.xspeed + other.yspeed) + random_range(-2, 2);
             hspeed += other.xspeed;

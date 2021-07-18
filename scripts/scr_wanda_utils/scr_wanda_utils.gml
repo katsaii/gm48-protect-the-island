@@ -61,7 +61,26 @@ function wanda_spawn_particles(_sys) {
         part_type_gravity(_, 0.1, 180);
         return _;
     })();
-    part_particles_create(_sys, x, y, ty, 1);
+    part_particles_create(_sys, x - 10, y, ty, 1);
+}
+
+/// @desc Spawns a particle at the current position.
+/// @param {real} sys The ID of the particle system to use.
+function wanda_enemy_spawn_particles(_sys) {
+    static ty = (function() {
+        var _ = part_type_create();
+        part_type_shape(_, pt_shape_star);
+        part_type_life(_, 10, 20);
+        part_type_direction(_, 0, 360, 0, 5.08);
+        part_type_speed(_, 0, 0.2, 0.02, 0.05);
+        part_type_size(_, 0.04, 0.1, 0.002, 0.005);
+        part_type_alpha3(_, 1, 1, 0);
+        part_type_colour1(_, CBlue.ICE);
+        part_type_gravity(_, 0.1, 180);
+        part_type_blend(_, true);
+        return _;
+    })();
+    part_particles_create(_sys, x + 10, y, ty, 1);
 }
 
 #macro SKYLINE_TOP make_colour_rgb(221, 166, 172) // make_colour_rgb(105, 70, 77);

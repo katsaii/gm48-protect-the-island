@@ -127,8 +127,8 @@
   "canGenerateBitmap": true,
   "maintainGms1Font": false,
   "parent": {
-    "name": "Fonts",
-    "path": "folders/Kandel/Common/Fonts.yy",
+    "name": "Kandel",
+    "path": "folders/Kandel.yy",
   },
   "resourceVersion": "1.0",
   "name": "fnt_default",

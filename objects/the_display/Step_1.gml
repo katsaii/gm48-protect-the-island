@@ -27,12 +27,12 @@ if (windowWidth != window_last_width || windowHeight != window_last_height) {
 	var app_y = app_pos[1];
 	var app_width = app_pos[2] - app_x;
 	var app_height = app_pos[3] - app_y;
-	//var app_surf_width = surface_get_width(application_surface);
-	//var app_surf_height = surface_get_height(application_surface);
-	//var app_scale_x = app_width / app_surf_width;
-	//var app_scale_y = app_height / app_surf_height;
+	var app_surf_width = surface_get_width(application_surface);
+	var app_surf_height = surface_get_height(application_surface);
+	var app_scale_x = app_width / app_surf_width;
+	var app_scale_y = app_height / app_surf_height;
 	//display_set_gui_maximise(app_scale_x, app_scale_y, app_x, app_y);
-	display_set_gui_position(1, 1, app_x, app_y, app_x + app_width, app_y + app_height);
+	display_set_gui_position(app_scale_x / 3, app_scale_y / 3, app_x, app_y, app_x + app_width, app_y + app_height);
 	show_debug_message("resizing the gui [" + string(app_width) + ":" + string(app_height) + "]");
 	alarm[0] = 2; // it's gotta be 2, don't touch this whoever you are
 	exit;

@@ -155,6 +155,13 @@ function draw_text_wonky(_x, _y, _text) {
     draw_text_transformed(_x, _y, _text, 1, 1, angle);
 }
 
+/// @desc Applies ease-in interpolation.
+/// @param {real} amount The amount to interpolate.
+function easein(_interp) {
+    static chan = animcurve_get_channel(ac_easein, 0);
+    return animcurve_channel_evaluate(chan, _interp);
+}
+
 #macro VIEW_LEFT camera_get_view_x(VIEW_CAM)
 #macro VIEW_TOP camera_get_view_y(VIEW_CAM)
 #macro VIEW_WIDTH camera_get_view_width(VIEW_CAM)
@@ -163,3 +170,5 @@ function draw_text_wonky(_x, _y, _text) {
 #macro VIEW_BOTTOM (VIEW_TOP + VIEW_HEIGHT)
 #macro VIEW_CENTRE_X (VIEW_LEFT + VIEW_WIDTH / 2)
 #macro VIEW_CENTRE_Y (VIEW_TOP + VIEW_HEIGHT / 2)
+
+#macro COLOUR_BLEND merge_colour(CPurple.MARDI_GRAS, CYellow.REKINDLED, (1 + dsin(current_time * 0.1)) / 8)

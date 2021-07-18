@@ -12,7 +12,7 @@
 /// @param {real} [dx] The x speed of the witch.
 /// @param {real} [dy] The y speed of the witch.
 function draw_witch(_witch_spr, _witch_img, _broom_spr, _broom_img, _x, _y, _xscale, _yscale, _colour, _alpha, _dx=0, _dy=0) {
-    var angle = 5 * -(_dx + _dy);
+    var angle = 5 * -(_dx * sign(_yscale) + _dy * sign(_xscale));
     draw_sprite_ext(_broom_spr, _broom_img, _x, _y, _xscale, _yscale, angle, _colour, _alpha);
     draw_sprite_ext(_witch_spr, _witch_img, _x, _y, _xscale, _yscale, 0.5 * -angle, _colour, _alpha);
 }

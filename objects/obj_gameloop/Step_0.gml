@@ -67,7 +67,7 @@ if (fadeIn > 0.9 && !instance_exists(obj_enemy)) {
     // - two enemties going in circles
     // - three enemies in a triangle formation, the middle enemy in front
     // - enemy circling another enemy
-    switch (3) {//(choose(0, 1, 2, 3)) {
+    switch (choose(0, 1, 2, 3)) {
     case 0:
         with (instance_create_layer(VIEW_RIGHT - 50, VIEW_CENTRE_Y, layer, obj_enemy)) {
             amplitudeX = 10;

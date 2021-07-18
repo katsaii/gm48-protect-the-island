@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"fnt_script","path":"fonts/fnt_script/fnt_script.yy",},"order":0,},
+    {"id":{"name":"snd_wanda_fly","path":"sounds/snd_wanda_fly/snd_wanda_fly.yy",},"order":5,},
     {"id":{"name":"shd_posterise","path":"shaders/shd_posterise/shd_posterise.yy",},"order":10,},
     {"id":{"name":"spr_sealine","path":"sprites/spr_sealine/spr_sealine.yy",},"order":4,},
     {"id":{"name":"scr_wanda_utils","path":"scripts/scr_wanda_utils/scr_wanda_utils.yy",},"order":3,},
@@ -26,6 +27,7 @@
     {"id":{"name":"fnt_default","path":"fonts/fnt_default/fnt_default.yy",},"order":0,},
     {"id":{"name":"shd_sepia","path":"shaders/shd_sepia/shd_sepia.yy",},"order":5,},
     {"id":{"name":"shd_clipping","path":"shaders/shd_clipping/shd_clipping.yy",},"order":0,},
+    {"id":{"name":"snd_wanda_shoot","path":"sounds/snd_wanda_shoot/snd_wanda_shoot.yy",},"order":6,},
     {"id":{"name":"ac_easein","path":"animcurves/ac_easein/ac_easein.yy",},"order":2,},
     {"id":{"name":"scr_gui","path":"scripts/scr_gui/scr_gui.yy",},"order":8,},
     {"id":{"name":"scr_application","path":"scripts/scr_application/scr_application.yy",},"order":2,},
@@ -39,6 +41,7 @@
     {"id":{"name":"fnt_tiny","path":"fonts/fnt_tiny/fnt_tiny.yy",},"order":2,},
     {"id":{"name":"spr_island_floating","path":"sprites/spr_island_floating/spr_island_floating.yy",},"order":8,},
     {"id":{"name":"fnt_bold","path":"fonts/fnt_bold/fnt_bold.yy",},"order":1,},
+    {"id":{"name":"bgm_title","path":"sounds/bgm_title/bgm_title.yy",},"order":4,},
     {"id":{"name":"scr_gml_ext","path":"scripts/scr_gml_ext/scr_gml_ext.yy",},"order":0,},
     {"id":{"name":"shd_invert","path":"shaders/shd_invert/shd_invert.yy",},"order":6,},
     {"id":{"name":"spr_finish_bad","path":"sprites/spr_finish_bad/spr_finish_bad.yy",},"order":3,},

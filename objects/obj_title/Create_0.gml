@@ -7,3 +7,8 @@ global.score = 0;
 ini_close();
 selection = 0;
 selectionSubmit = false;
+musicEmitter = audio_emitter_create();
+musicFade = 0;
+musicFadeCounter = 0.005;
+audio_emitter_gain(musicEmitter, 0);
+audio_play_sound_on(musicEmitter, bgm_title, true, 100);

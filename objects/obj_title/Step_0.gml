@@ -1,6 +1,16 @@
 /// @desc Update selection.
+audio_emitter_gain(musicEmitter, musicFade);
 if not (visible) {
+    musicFade -= musicFadeCounter * 2;
+    if (musicFade < 0) {
+        musicFade = 0;
+    }
     exit;
+} else {
+    musicFade += musicFadeCounter;
+    if (musicFade > 1) {
+        musicFade = 1;
+    }
 }
 var cam = VIEW_CAM;
 var cam_left = camera_get_view_x(cam);

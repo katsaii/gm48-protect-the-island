@@ -23,6 +23,9 @@ blast = keyboard_check(ord("X")) || keyboard_check(vk_enter);
 if (blastTimer == -1) {
     if (blast) {
         blastTimer = 1;
+        audio_emitter_gain(shootEmitter, random_range(0.5, 0.6));
+        audio_emitter_pitch(shootEmitter, random_range(0.8, 1.2));
+        audio_play_sound_on(shootEmitter, snd_wanda_shoot, false, 1);
         with (instance_create_depth(x, y - 10 + random_range(-5, 5), depth, obj_wanda_projectile)) {
             image_blend = CCyan.SURGE;
             speed = 10;
@@ -38,3 +41,6 @@ if (blastTimer == -1) {
         blastTimer = -1;
     }
 }
+var velocity = map_range(point_distance(0, 0, xspeed, yspeed), 0, 20, 0, 1);
+audio_emitter_gain(flyEmitter, lerp(0.1, 1, velocity));
+audio_emitter_pitch(flyEmitter, lerp(0.75, 1.4, velocity));

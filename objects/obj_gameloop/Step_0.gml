@@ -59,5 +59,17 @@ if (global.hp < 0) {
 }
 if not (instance_exists(obj_enemy)) {
     show_debug_message("starting a new wave");
-    instance_create_layer(VIEW_RIGHT - 80, VIEW_CENTRE_Y, layer, obj_enemy);
+    // 3 types of wave:
+    // - single centre enemy
+    // - two enemties going in circles
+    // - three enemies in a triangle formation, the middle enemy in front
+    switch (choose(0, 1, 3)) {
+        default:
+    case 0:
+        with (instance_create_layer(VIEW_RIGHT - 50, VIEW_CENTRE_Y, layer, obj_enemy)) {
+            amplitudeX = 10;
+            amplitudeY = VIEW_HEIGHT / 2.5;
+        }
+        break;
+    }
 }

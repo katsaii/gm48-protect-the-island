@@ -1,7 +1,7 @@
 /// @desc Update movement.
-var xdir = blast ? -1 : clamp(keyboard_direction(vk_left, vk_right) + keyboard_direction(ord("A"), ord("D")), -1, 1);
+var xdir = clamp(keyboard_direction(vk_left, vk_right) + keyboard_direction(ord("A"), ord("D")), -1, 1);
 var ydir = clamp(keyboard_direction(vk_up, vk_down) + keyboard_direction(ord("W"), ord("S")), -1, 1);
-xspeed = movement_iterate(xspeed, acc, frict, handling, xdir);
+xspeed = movement_iterate(xspeed, acc, frict, handling, xdir) - blast * 0.25;
 yspeed = movement_iterate(yspeed, acc, frict, handling, ydir);
 x += xspeed;
 y += yspeed;

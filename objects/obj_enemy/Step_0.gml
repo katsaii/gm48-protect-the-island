@@ -7,9 +7,22 @@ hitTimer -= hitCounter;
 if (hitTimer < 0) {
     hitTimer = 0;
 }
-blastTimer -= blastCounter;
+blastTimer -= blastCounter * (4 - bulletId);
 if (blastTimer < 0) {
     blastTimer = 1;
+    // spawn projectiles
+    var angless = [[0], [-10, 10], [-20, 0, 20]];
+    var angles = angless[bulletId - 1];
+    for (var i = array_length(angles) - 1; i >= 0; i -= 1) {
+        var bullet_direction = angles[i];
+        with (instance_create_layer(x, y - 10, layer, obj_enemy_projectile)) {
+            sprite_index = other.bullet;
+            speed = 3;
+            direction = 180 + bullet_direction;
+            image_xscale = 1.5;
+            image_yscale = 1.5;
+        }
+    }
 }
 var interp = easein(entryTimer);
 angle += angleSpeed;

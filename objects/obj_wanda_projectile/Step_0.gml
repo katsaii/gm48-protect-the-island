@@ -1,4 +1,4 @@
-/// @desc Destroy particle if it exits the room.
+/// @desc Destroy particle if it exits the view.
 var cam = VIEW_CAM;
 var cam_left = camera_get_view_x(cam);
 var cam_top = camera_get_view_y(cam);

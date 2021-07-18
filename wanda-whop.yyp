@@ -38,6 +38,8 @@
     {"id":{"name":"snd_hit","path":"sounds/snd_hit/snd_hit.yy",},"order":7,},
     {"id":{"name":"the_display","path":"objects/the_display/the_display.yy",},"order":4,},
     {"id":{"name":"fnt_default","path":"fonts/fnt_default/fnt_default.yy",},"order":0,},
+    {"id":{"name":"spr_bullet_hitbox","path":"sprites/spr_bullet_hitbox/spr_bullet_hitbox.yy",},"order":3,},
+    {"id":{"name":"obj_enemy_projectile","path":"objects/obj_enemy_projectile/obj_enemy_projectile.yy",},"order":11,},
     {"id":{"name":"shd_sepia","path":"shaders/shd_sepia/shd_sepia.yy",},"order":5,},
     {"id":{"name":"shd_clipping","path":"shaders/shd_clipping/shd_clipping.yy",},"order":0,},
     {"id":{"name":"snd_wanda_shoot","path":"sounds/snd_wanda_shoot/snd_wanda_shoot.yy",},"order":6,},

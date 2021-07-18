@@ -1,11 +1,10 @@
 /// @desc Initialise this enemy.
 witch = asset_get_index("spr_witch_" + string_lower(chr(irandom_range(ord("A"), ord("H")))));
-var bullet_id = irandom_range(1, 3);
-bullet = asset_get_index("spr_bullet_" + string(bullet_id));
-hp = choose(3, 5, 7);
+bulletId = irandom_range(1, 3);
+bullet = asset_get_index("spr_bullet_" + string(bulletId));
+hp = choose(3, 3, 3, 5, 5, 7);
 blastTimer = 0;
-var counters = [1, 2, 3];
-blastCounter = 0.01 * counters[bullet_id - 1];
+blastCounter = 0.01;
 xspeed = 0;
 yspeed = 0;
 targetX = xstart;

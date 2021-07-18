@@ -1,5 +1,5 @@
 /// @desc Initialise this enemy.
-witch = asset_get_index("spr_enemy_" + choose("a", "b"));
+witch = asset_get_index("spr_witch_" + string_lower(chr(irandom_range(ord("A"), ord("H")))));
 hp = choose(3, 5, 7);
 blast = false;
 xspeed = 0;

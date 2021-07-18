@@ -5,6 +5,8 @@ var img = current_time % 2000 > 1750;
 part_system_drawit(partSys);
 if (blast) {
     img = 3;
+} else if (global.hp <= 5 && instance_exists(obj_gameloop)) {
+    img = 2;
 }
 if (hitTimer > 0 && current_time % 150 > 100) {
     gpu_set_blendmode(bm_add);

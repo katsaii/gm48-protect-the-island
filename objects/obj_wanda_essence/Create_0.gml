@@ -1,5 +1,5 @@
 /// @desc Initialise essence.
-global.hpPool -= 0.5;
+global.hpPool -= 1;
 global.score -= 3;
 targetX = VIEW_CENTRE_X;
 targetY = VIEW_CENTRE_Y;

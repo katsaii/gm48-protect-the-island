@@ -13,6 +13,7 @@
     {"id":{"name":"spr_bullet_1","path":"sprites/spr_bullet_1/spr_bullet_1.yy",},"order":0,},
     {"id":{"name":"spr_skyline","path":"sprites/spr_skyline/spr_skyline.yy",},"order":1,},
     {"id":{"name":"spr_bullet_2","path":"sprites/spr_bullet_2/spr_bullet_2.yy",},"order":1,},
+    {"id":{"name":"obj_enemy_brutality","path":"objects/obj_enemy_brutality/obj_enemy_brutality.yy",},"order":12,},
     {"id":{"name":"obj_title","path":"objects/obj_title/obj_title.yy",},"order":1,},
     {"id":{"name":"shd_brightness","path":"shaders/shd_brightness/shd_brightness.yy",},"order":8,},
     {"id":{"name":"scr_controllers","path":"scripts/scr_controllers/scr_controllers.yy",},"order":7,},
@@ -131,7 +132,7 @@
     "IDEVersion": "23.1.1.300",
   },
   "resourceVersion": "1.4",
-  "name": "wanda-whop",
+  "name": "witch-wanda",
   "tags": [],
   "resourceType": "GMProject",
 }

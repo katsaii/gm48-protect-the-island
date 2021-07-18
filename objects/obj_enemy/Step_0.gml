@@ -8,7 +8,7 @@ if (hitTimer < 0) {
     hitTimer = 0;
 }
 blastTimer -= blastCounter * (4 - bulletId);
-if (blastTimer < 0) {
+if (blastTimer < 0 && global.hp > 0) {
     blastTimer = 1;
     // spawn projectiles
     var angless = [[0], [-10, 10], [-20, 0, 20]];
@@ -38,6 +38,9 @@ if (hitTimer <= 0 && entryTimer > 0.25) {
     if (hp <= 0) {
         repeat (choose(3, 6, 9)) {
             instance_create_layer(x, y, layer, obj_enemy_essence);
+        }
+        if (global.hp <= 0) {
+            instance_create_layer(x, y, layer, obj_enemy_brutality);
         }
         instance_destroy();
     } else {

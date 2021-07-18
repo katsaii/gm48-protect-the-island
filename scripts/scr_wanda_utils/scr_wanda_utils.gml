@@ -183,6 +183,27 @@ function easein(_interp) {
     return animcurve_channel_evaluate(chan, _interp);
 }
 
+/// @desc Finds the coordinate at a bezier curve with 3 control points.
+/// @param {real} amount The percentage along the bezier curve.
+/// @param {real} x1 The X coordinate of the first control point.
+/// @param {real} y1 The Y coordinate of the first control point.
+/// @param {real} x2 The X coordinate of the second control point.
+/// @param {real} y2 The Y coordinate of the second control point.
+/// @param {real} x3 The X coordinate of the third control point.
+/// @param {real} y3 The Y coordinate of the third control point.
+/// @author Kat @katsaii
+function lerp_bezier(_amount, _x1, _y1, _x2, _y2, _x3, _y3) {
+    var ix = lerp(_x1, _x2, _amount);
+    var iy = lerp(_y1, _y2, _amount);
+    var jx = lerp(_x2, _x3, _amount);
+    var jy = lerp(_y2, _y3, _amount);
+    // get final curve point
+    var bx = lerp(ix, jx, _amount);
+    var by = lerp(iy, jy, _amount);
+    return [bx, by];
+}
+
+
 #macro VIEW_LEFT camera_get_view_x(VIEW_CAM)
 #macro VIEW_TOP camera_get_view_y(VIEW_CAM)
 #macro VIEW_WIDTH camera_get_view_width(VIEW_CAM)

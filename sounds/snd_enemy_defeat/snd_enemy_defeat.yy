@@ -1,6 +1,6 @@
 {
   "compression": 0,
-  "volume": 0.39,
+  "volume": 1.0,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_hit.wav",
-  "duration": 0.237143,
+  "soundFile": "snd_enemy_defeat.wav",
+  "duration": 0.427256,
   "parent": {
-    "name": "Player",
-    "path": "folders/Wanda/Player.yy",
+    "name": "Enemies",
+    "path": "folders/Wanda/Enemies.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_hit",
+  "name": "snd_enemy_defeat",
   "tags": [],
   "resourceType": "GMSound",
 }

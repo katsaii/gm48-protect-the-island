@@ -3,6 +3,10 @@ entryTimer += entryCounter;
 if (entryTimer > 1) {
     entryTimer = 1;
 }
+hitTimer -= hitCounter;
+if (hitTimer < 0) {
+    hitTimer = 0;
+}
 var interp = easein(entryTimer);
 angle += angleSpeed;
 var path_x = targetX + lengthdir_x(amplitudeX, angle);
@@ -12,3 +16,17 @@ y = lerp(targetY, path_y, interp);
 xspeed = x - xprevious;
 yspeed = y - yprevious;
 wanda_enemy_spawn_particles(partSys);
+if (hitTimer <= 0) {
+    if (hp <= 0) {
+        instance_destroy();
+    } else {
+        var proj = instance_place(x, y, obj_wanda_projectile);
+        if (proj) {
+            instance_destroy(proj);
+            hitTimer = 1;
+            hp -= 1;
+            instance_create_layer(x, y, layer, obj_enemy_essence);
+            audio_play_sound_on(hurtEmitter, hp > 0 ? snd_hit : snd_enemy_defeat, false, 1);
+        }
+    }
+}

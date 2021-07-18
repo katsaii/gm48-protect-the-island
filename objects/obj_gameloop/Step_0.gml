@@ -43,6 +43,12 @@ if (fadeIn < 1) {
     }
 }
 global.hp -= hpDrain;
+var prev_pool = global.hpPool;
+global.hpPool = max(0, global.hpPool - hpRecover);
+global.hp += prev_pool - global.hpPool;
+if (global.hp > hpMax) {
+    global.hp = hpMax;
+}
 if (global.hp < 0) {
     global.hp = 0;
     gameOver = true;

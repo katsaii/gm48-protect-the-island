@@ -1,7 +1,10 @@
 /// @desc Initialise the gameloop.
 obj_title.visible = false;
-global.hp = 15;
-hpDrain = 0.03;
+hpMax = 20;
+global.hp = hpMax;
+global.hpPool = 0;
+hpDrain = 0.01;
+hpRecover = 0.1;
 fadeIn = 0;
 fadeInCounter = 0.01;
 fadeOut = 0;

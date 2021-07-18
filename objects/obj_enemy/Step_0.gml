@@ -7,6 +7,10 @@ hitTimer -= hitCounter;
 if (hitTimer < 0) {
     hitTimer = 0;
 }
+blastTimer -= blastCounter;
+if (blastTimer < 0) {
+    blastTimer = 1;
+}
 var interp = easein(entryTimer);
 angle += angleSpeed;
 var path_x = targetX + lengthdir_x(amplitudeX, angle);

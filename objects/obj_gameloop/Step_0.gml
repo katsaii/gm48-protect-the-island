@@ -6,6 +6,9 @@ if (gameOver) {
         gameRestartTimer -= gameRestartCounter;
         if (gameRestartTimer < -0.25) {
             instance_destroy();
+            with (obj_enemy) {
+                hp = 0;
+            }
         }
     } else {
         if (fadeOut >= 1) {
@@ -59,11 +62,12 @@ if (global.hp < 0) {
 }
 if (fadeIn > 0.9 && !instance_exists(obj_enemy)) {
     show_debug_message("starting a new wave");
-    // 3 types of wave:
+    // types of wave:
     // - single centre enemy
     // - two enemties going in circles
     // - three enemies in a triangle formation, the middle enemy in front
-    switch (choose(0, 1, 3)) {
+    // - enemy circling another enemy
+    switch (3) {//(choose(0, 1, 2, 3)) {
     case 0:
         with (instance_create_layer(VIEW_RIGHT - 50, VIEW_CENTRE_Y, layer, obj_enemy)) {
             amplitudeX = 10;
@@ -72,13 +76,37 @@ if (fadeIn > 0.9 && !instance_exists(obj_enemy)) {
         break;
     case 1:
         var amp = VIEW_HEIGHT / 5.5;
-        with (instance_create_layer(VIEW_RIGHT - 60, VIEW_CENTRE_Y - amp, layer, obj_enemy)) {
-            amplitudeX = amp;
+        with (instance_create_layer(VIEW_RIGHT - 60, VIEW_CENTRE_Y - amp - 10, layer, obj_enemy)) {
+            amplitudeX = amp / 2;
             amplitudeY = amp;
         }
-        with (instance_create_layer(VIEW_RIGHT - 60, VIEW_CENTRE_Y + amp, layer, obj_enemy)) {
-            amplitudeX = amp;
+        with (instance_create_layer(VIEW_RIGHT - 60, VIEW_CENTRE_Y + amp + 20, layer, obj_enemy)) {
+            amplitudeX = amp / 2;
             amplitudeY = amp;
+        }
+        break;
+    case 2:
+        with (instance_create_layer(VIEW_RIGHT - 90, VIEW_CENTRE_Y, layer, obj_enemy)) {
+            amplitudeX = 10;
+            amplitudeY = 10;
+        }
+        with (instance_create_layer(VIEW_RIGHT - 50, VIEW_CENTRE_Y - 60, layer, obj_enemy)) {
+            amplitudeX = 20;
+            amplitudeY = 20;
+        }
+        with (instance_create_layer(VIEW_RIGHT - 50, VIEW_CENTRE_Y + 60, layer, obj_enemy)) {
+            amplitudeX = 20;
+            amplitudeY = 20;
+        }
+        break;
+    case 3:
+        with (instance_create_layer(VIEW_RIGHT - 90, VIEW_CENTRE_Y, layer, obj_enemy)) {
+            amplitudeX = 10;
+            amplitudeY = 10;
+        }
+        with (instance_create_layer(VIEW_RIGHT - 90, VIEW_CENTRE_Y, layer, obj_enemy)) {
+            amplitudeX = 50;
+            amplitudeY = 50;
         }
     }
 }

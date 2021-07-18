@@ -3,7 +3,7 @@ var xdir = clamp(keyboard_direction(vk_left, vk_right) + keyboard_direction(ord(
 var ydir = clamp(keyboard_direction(vk_up, vk_down) + keyboard_direction(ord("W"), ord("S")), -1, 1);
 xspeed = movement_iterate(xspeed, acc, frict, handling, xdir);
 yspeed = movement_iterate(yspeed, acc, frict, handling, ydir);
-x += xspeed - blast;
+x += xspeed - 2 * blast;
 y += yspeed;
 var cam = VIEW_CAM;
 var cam_left = camera_get_view_x(cam);
@@ -48,16 +48,17 @@ hitTimer -= hitCounter;
 if (hitTimer < 0) {
     hitTimer = 0;
 }
+var proj = instance_place(x, y, obj_enemy_projectile);
 if (hitTimer <= 0) {
-    //var proj = instance_place(x, y, obj_enemy_projectile);
-    //if (proj) {
-    if (keyboard_check_pressed(vk_space)) {
-        //instance_destroy(proj);
+    if (proj) {
+        instance_destroy(proj);
         hitTimer = 1;
         instance_create_layer(x, y, layer, obj_wanda_essence);
         audio_emitter_pitch(hurtEmitter, 1.5);
         audio_play_sound_on(hurtEmitter, snd_hit, false, 1);
     }
+} else if (proj) {
+    instance_destroy(proj);
 }
 var velocity = map_range(point_distance(0, 0, xspeed, yspeed), 0, 20, 0, 1);
 audio_emitter_gain(flyEmitter, lerp(0.1, 1, velocity));

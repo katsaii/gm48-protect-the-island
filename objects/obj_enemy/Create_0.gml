@@ -2,7 +2,7 @@
 witch = asset_get_index("spr_witch_" + string_lower(chr(irandom_range(ord("A"), ord("H")))));
 bulletId = irandom_range(1, 3);
 bullet = asset_get_index("spr_bullet_" + string(bulletId));
-hp = choose(3, 3, 3, 5, 5, 7);
+hp = choose(3, 3, 3, 3, 5, 5, 5, 7);
 blastTimer = choose(0, 0.25, 0.5, 0.75);
 blastCounter = 0.01;
 xspeed = 0;

@@ -59,6 +59,7 @@
     {"id":{"name":"obj_wanda_essence","path":"objects/obj_wanda_essence/obj_wanda_essence.yy",},"order":8,},
     {"id":{"name":"fnt_tiny","path":"fonts/fnt_tiny/fnt_tiny.yy",},"order":2,},
     {"id":{"name":"spr_island_floating","path":"sprites/spr_island_floating/spr_island_floating.yy",},"order":8,},
+    {"id":{"name":"spr_wanda_hitbox","path":"sprites/spr_wanda_hitbox/spr_wanda_hitbox.yy",},"order":10,},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},"order":2,},
     {"id":{"name":"snd_crumble","path":"sounds/snd_crumble/snd_crumble.yy",},"order":7,},
     {"id":{"name":"fnt_bold","path":"fonts/fnt_bold/fnt_bold.yy",},"order":1,},

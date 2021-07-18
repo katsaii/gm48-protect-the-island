@@ -138,7 +138,7 @@ function wanda_island_spawn_particles(_sys, _left, _top, _right, _bottom) {
 function draw_text_3d(_x, _y, _text, _layer_count, _outline, _fill) {
     static sep = 1;
     var angle = current_time * 0.03 - _y * 3;
-    var n = lerp(_layer_count / 2, _layer_count, min(dsin(angle * 2) + 1, 1));
+    var n = lerp(_layer_count / 2, _layer_count, min(dsin(angle * 4 + _y * 5) + 1, 1));
     var dx = lengthdir_x(sep, angle);
     var dy = lengthdir_y(sep, angle);
     for (var i = 0; i < n; i += 1) {

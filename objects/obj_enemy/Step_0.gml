@@ -36,7 +36,7 @@ wanda_enemy_spawn_particles(partSys);
 var proj = instance_place(x, y, obj_wanda_projectile);
 if (hitTimer <= 0 && entryTimer > 0.25) {
     if (hp <= 0) {
-        repeat (choose(3, 6, 9)) {
+        repeat (choose(1, 3, 6)) {
             instance_create_layer(x, y, layer, obj_enemy_essence);
         }
         if (global.hp <= 0) {

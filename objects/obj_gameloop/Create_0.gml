@@ -1,6 +1,6 @@
 /// @desc Initialise the gameloop.
 obj_title.visible = false;
-hp = 15;
+global.hp = 15;
 hpDrain = 0.03;
 fadeIn = 0;
 fadeInCounter = 0.01;

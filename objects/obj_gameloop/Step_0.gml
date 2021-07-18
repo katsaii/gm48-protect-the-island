@@ -1,6 +1,6 @@
 /// @desc Update timers.
 if (gameOver) {
-    hp = 0;
+    global.hp = 0;
     if (fadeOut >= 1) {
         fadeOut = 1;
         if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("X"))) {
@@ -17,8 +17,8 @@ if (fadeIn < 1) {
         fadeIn = 1;
     }
 }
-hp -= hpDrain;
-if (hp < 0) {
-    hp = 0;
+global.hp -= hpDrain;
+if (global.hp < 0) {
+    global.hp = 0;
     gameOver = true;
 }

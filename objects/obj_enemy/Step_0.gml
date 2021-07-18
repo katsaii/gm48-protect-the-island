@@ -18,6 +18,9 @@ yspeed = y - yprevious;
 wanda_enemy_spawn_particles(partSys);
 if (hitTimer <= 0) {
     if (hp <= 0) {
+        repeat (choose(3, 6, 9)) {
+            instance_create_layer(x, y, layer, obj_enemy_essence);
+        }
         instance_destroy();
     } else {
         var proj = instance_place(x, y, obj_wanda_projectile);

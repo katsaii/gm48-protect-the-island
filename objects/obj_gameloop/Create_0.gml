@@ -4,6 +4,7 @@ obj_title.visible = false;
 hpMax = 20;
 global.hp = hpMax;
 global.hpPool = 0;
+global.score = 0;
 hpDrain = 0.015;
 hpRecover = 0.1;
 fadeIn = 0;
